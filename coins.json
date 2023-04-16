@@ -1,29 +1,5 @@
 [{
 		"roman_imperial": [{
-				"hadrian": {
-					"emperor": "Hadrian",
-					"file": "hadrian",
-					"material": "AR",
-					"denomination": "Denarius",
-					"yearl": 119,
-					"yearh": 122,
-					"mint": "Rome",
-					"officina": null,
-					"emission": null,
-					"weight": 3.05,
-					"diameter": "19.0mm",
-					"axis": "7H",
-					"obverse_legend": "IMP CAESAR TRAIAN HADRIANVS AVG",
-					"reverse_legend": "P M TR P COS III",
-					"exergue": "SAL AVG",
-					"obverse_desc": "Bust of Hadrian, laureate, draped, cuirassed, facing right",
-					"reverse_desc": "Salus seated left, feeding serpent, who is wrapped around an altar, out of patera with right hand",
-					"reference": "RIC II 137C",
-					"provenance": "Ex. Romae Aeternae Numismatics 2016",
-					"code": "$200",
-					"stock": "yes"
-				}
-			},{
 				"septimiusseverus1": {
 					"emperor": "Septimius Severus",
 					"file": "septimiusseverus1",
