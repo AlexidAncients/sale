@@ -120,30 +120,6 @@
 					"stock": "yes"
 				}
 			},{
-				"gallienus1": {
-					"emperor": "Gallienus",
-					"file": "gallienus1",
-					"material": "BI",
-					"denomination": "Antoninianus",
-					"yearl": 267,
-					"yearh": 268,
-					"mint": "Rome",
-					"officina": null,
-					"emission": "10th",
-					"weight": 3.25,
-					"diameter": "21.0mm",
-					"axis": "6H",
-					"obverse_legend": "GALLIENVS AVG",
-					"reverse_legend": "NEPTVNO CONS AVG",
-					"exergue": "II",
-					"obverse_desc": "Head of Gallienus, radiate, right",
-					"reverse_desc": "Hippocamp or capricorn, right",
-					"reference": "RIC V Gallienus 245",
-					"provenance": "Ex. CNG Electronic Auction 436, Lot 688, Ex. William Whetstone Collection",
-					"code": "$180",
-					"stock": "yes"
-				}
-			},{
 				"probus1": {
 					"emperor": "Probus",
 					"file": "probus1",
