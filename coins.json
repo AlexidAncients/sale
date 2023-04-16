@@ -24,30 +24,6 @@
 					"stock": "yes"
 				}
 			},{
-				"septimiusseverus3": {
-					"emperor": "Septimius Severus",
-					"file": "septimiusseverus3",
-					"material": "AR",
-					"denomination": "Denarius",
-					"yearl": 194,
-					"yearh": 195,
-					"mint": "Emesa",
-					"officina": null,
-					"emission": null,
-					"weight": 3.47,
-					"diameter": "17.5mm",
-					"axis": "6H",
-					"obverse_legend": "IMP CAE L SEP SEV PERT AVG COS II",
-					"reverse_legend": "VICTOR AVG",
-					"exergue": null,
-					"obverse_desc": "Head of Septimius Severus, laureate, right",
-					"reverse_desc": "Victory, winged, draped, advancing left, holding wreath in extended right hand and palm sloped over left shoulder in left hand",
-					"reference": "RIC IV Septimius Severus 425",
-					"provenance": "Ex. Doug Smith Collection, Ex. John Anthony 2019",
-					"code": "$150",
-					"stock": "yes"
-				}
-			},{
 				"septimiusseverus1": {
 					"emperor": "Septimius Severus",
 					"file": "septimiusseverus1",
