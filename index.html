@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <title>Joseph's Ancient Coins</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Joseph's Ancient Coins</h1>
+
+<ul><li><a class="active" href="/josephscoins/index.html">Home</a></li><li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Sort</a> <div class="dropdown-content"><a href="/josephscoins/sort/type.html">By Type</a><a href="/josephscoins/sort/mint.html">By Mint</a><a href="/josephscoins/sort/subcol.html">By Sub-Collection</a></div></li></ul>
+
+<script type='text/javascript'>  
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200) {
+  
+      var response = JSON.parse(xhttp.responseText);
+      var coins = response; 
+	
+	
+    for (var indexKey in coins) { 
+	  for (var key in coins[indexKey]) {
+		for (var indexCoin in coins[indexKey][key]) {
+		  for (var coin in coins[indexKey][key][indexCoin]) {
+		    var imp = coins[indexKey][key][indexCoin][coin].emperor;
+            var title = coins[indexKey][key][indexCoin][coin].file;
+            var folder = title.replace(/[0-9]/g, '');
+            var mat = coins[indexKey][key][indexCoin][coin].material;
+            var denom = coins[indexKey][key][indexCoin][coin].denomination;
+            var yearl = coins[indexKey][key][indexCoin][coin].yearl;
+			var yearh = coins[indexKey][key][indexCoin][coin].yearh;
+            if (yearl == yearh) { 
+			  var date = yearl; 
+			} else { 
+			  var date = yearl + ' - ' + yearh;
+			}
+			var ref = coins[indexKey][key][indexCoin][coin].reference;
+            var codenum = coins[indexKey][key][indexCoin][coin].code;
+            var mnt = coins[indexKey][key][indexCoin][coin].mint;
+            var off = coins[indexKey][key][indexCoin][coin].officina;
+            var em = coins[indexKey][key][indexCoin][coin].emission;
+            var wt = coins[indexKey][key][indexCoin][coin].weight;
+            var diam = coins[indexKey][key][indexCoin][coin].diameter;
+            var ax = coins[indexKey][key][indexCoin][coin].axis;
+            var obv = coins[indexKey][key][indexCoin][coin].obverse_legend;
+            var rev = coins[indexKey][key][indexCoin][coin].reverse_legend;
+            var ex = coins[indexKey][key][indexCoin][coin].exergue;
+            var obvd = coins[indexKey][key][indexCoin][coin].obverse_desc;
+            var revd = coins[indexKey][key][indexCoin][coin].reverse_desc; 
+            var prov = coins[indexKey][key][indexCoin][coin].provenance;
+            var stck = coins[indexKey][key][indexCoin][coin].stock;
+            if (stck == null) { 
+			  var dot = "stock-red"; 
+		    } else { 
+			  var dot = "stock-green"; 
+		    }
+		    var card = document.createElement('div');
+            card.style.display = "inline-block";
+            card.style.padding = "10px";
+            card.className = 'card';
+            card.innerHTML =
+		    '  <div class="coin" id="' + title + 'Img">' +
+              '      <img src="./images/' + title + '/' + title + ' (Small).jpg" class="pic"/>' +
+              '      <div class="overlay" unselectable="on">' +
+              '        <div class="code">' + 
+              '          <span>' + codenum + '</span>' + 
+              '        </div>' +
+              '        <div class="' + dot + '">' + 
+			  '          <span>•</span>' + 
+			  '        </div>' +
+			  '        <div class="caption-subtitle">' +
+              '          <span>' + imp + '</span></br>' +
+              '          <span>' + mat + ' ' + denom + '</span><br>' +
+              '          <span>' + date + ' AD'  + '</span><br>' +
+              '          <span>' + ref + '</span>' +
+              '        </div>' +
+              '      </div>' +
+	          '  <div id="' + title + 'Modal" class="modal">' +
+              '    <div class="modal-content">' +  
+	          '	   <div class="coin_page">' +
+	          '        <img src="./images/' + title + '/' + title + ' (Small).jpg" alt="' + imp + ', ' + mat + ' ' + denom + '" class="big_pic"/>' +
+	          '        <span class="description">' +
+	          '          <p class="aligned"><strong> ' + imp + ' ' + mat + ' ' + denom + '</strong></em></p>' + 
+	          '          <p class="aligned"><strong>Minted:</strong> ' + date + ' AD'  + ', at the ' + mnt + ' Mint</em></p>' + 
+              '          <p class="aligned"><strong>Weight:</strong> ' + wt + 'g, <strong>Diameter:</strong> ' + diam + ', <strong>Axis:</strong> ' + ax + '</em></p>' + 
+	          '          <p class="aligned"><strong>Obverse:</strong> ' + obv + ',</br><em>' + obvd + '</em></p>' +
+	          '          <p class="aligned"><strong>Reverse:</strong> ' + rev + ',</br><em>' + revd + '</em></p>' +
+	          '          <p class="aligned"><strong>Exergue:</strong> ' + ex + '</br></br><p>' +
+	          //'          <p class="aligned"><strong>Exergue:</strong> ' + ex + '</br><p>' +
+	          //'          <p class="aligned"><strong>Provenance:</strong> ' + prov + '</br></br></p>' +
+	          '          <hr class="marginated">' +
+	          '          <p class="aligned"><strong>Reference:</strong> ' + ref + '</p>' + 
+	          '        </span>' + 
+	          '      </div>' + 
+	          '    </div>' +
+	          '  </div>';			
+            document.getElementById(key).appendChild(card);
+			}
+		  }	
+		}
+	  }
+    };
+  var modals = document.querySelectorAll('.modal');
+  var imgs = document.querySelectorAll('.coin'); 
+	  
+  for(let i = 0; i < imgs.length; i++){
+    imgs[i].onclick = function(){
+      modals[i].style.display = "block";
+    }
+  }
+	 
+  window.onclick = function(event) {
+    if (event.target.className == "modal") {
+      event.target.style.display = "none";
+    }
+  }
+  };
+  xhttp.open("GET", "coins.json", true);
+  xhttp.send();
+
+</script>
+
+<p class="coin-title">Roman Imperial</p>
+<hr class="style-two">
+<div id="roman_imperial" class></div>
+
+<p class="coin-title">Roman Provincial</p>
+<hr class="style-three">
+<div id="roman_provincial" class></div>
+
+<p class="coin-title">Byzantine</p>
+<hr class="style-one">
+<div id="byzantine" class></div>
+	
+</body>
+</html>
